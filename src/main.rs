@@ -13,9 +13,11 @@ pub static mut OUTPUT: Option<std::io::BufWriter<std::io::Stdout>> = None;
 pub static mut INPUT: Option<Input> = None;
 
 fn main() {
-    let (t, ): (usize, ) = scanln();
+    let (t, ): (usize, ) = (10, );
     for _ in 0..t {
-        a::solve();
+        // a::solve();
+        let s: String = scanln_raw();
+        outln!("{}", s);
     }
     flush();
 }
@@ -52,4 +54,11 @@ fn scanln<T: token_read::FromTokens>() -> T where <T as token_read::FromTokens>:
         INPUT.get_or_insert_with(|| Input::new(std::io::stdin().lock()))
     };
     input.line().unwrap()
+}
+
+fn scanln_raw() -> String {
+    let input = unsafe {
+        INPUT.get_or_insert_with(|| Input::new(std::io::stdin().lock()))
+    };
+    input.line_raw().unwrap()
 }

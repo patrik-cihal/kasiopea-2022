@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.69"
+rand = "0.8.5"
 token-read = "0.1.2"

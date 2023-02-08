@@ -5,7 +5,7 @@ mod b;
 mod c;
 mod d;
 mod e;
-mod f;
+mod g;
 
 type Input = token_read::TokenReader<std::io::StdinLock<'static>>;
 
@@ -15,7 +15,7 @@ pub static mut INPUT: Option<Input> = None;
 fn main() {
     let (t, ): (usize, ) = scanln();
     for _ in 0..t {
-        b::solve();
+        g::solve();
     }
     flush();
 }
